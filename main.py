@@ -13,8 +13,10 @@ HEADERS = {
 EMOJI_MAP = {
     "ideas": [":bulb:", ":bombilla:"],
     "warnings": [":warning:", ":advertencia:"],
-    "docs": [":books:", ":documentacion:"],
-    "pinned": [":pushpin:", ":fijado:"]
+    "docs": [":books:", ":libros:"],
+    "loud": [":loudspeaker:", ":altavoz_sonando:"],
+    "hilo": [":thread:", ":hilo:"],
+    "pinned": [":pushpin:", ":chincheta:"]
 }
 
 @app.route("/ai-search", methods=["POST"])
