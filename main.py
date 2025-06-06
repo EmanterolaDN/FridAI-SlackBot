@@ -11,10 +11,10 @@ HEADERS = {
 }
 
 EMOJI_MAP = {
-    "ideas": ":bulb:",
-    "warnings": ":warning:",
-    "docs": ":books:",
-    "pinned": ":pushpin:"
+    "ideas": [":bulb:", ":bombilla:"],
+    "warnings": [":warning:", ":advertencia:"],
+    "docs": [":books:", ":documentacion:"],
+    "pinned": [":pushpin:", ":fijado:"]
 }
 
 @app.route("/ai-search", methods=["POST"])
@@ -23,8 +23,8 @@ def ai_search():
     query = data.get("text", "").strip().lower()
     response_url = data.get("response_url")
 
-    emoji = EMOJI_MAP.get(query, ":bulb:")
-    search_query = f"in:{CHANNEL} {emoji}"
+    emojis = EMOJI_MAP.get(query, [":bulb:"])
+    search_query = f"in:{CHANNEL} " + " OR ".join(emojis)
 
     r = requests.get("https://slack.com/api/search.messages", headers=HEADERS, params={
         "query": search_query,
