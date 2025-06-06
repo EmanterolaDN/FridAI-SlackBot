@@ -15,7 +15,7 @@ EMOJI_MAP = {
     "warnings": [":warning:", ":advertencia:"],
     "docs": [":books:", ":libros:"],
     "loud": [":loudspeaker:", ":altavoz_sonando:"],
-    "hilo": [":thread:", ":hilo:"],
+    "thread": [":thread:", ":hilo:"],
     "pinned": [":pushpin:", ":chincheta:"]
 }
 
